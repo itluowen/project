@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../淘宝搜索/lib/jquery.js"></script>
+		<style>
+			img{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/angel.gif" alt="">
+		
+		
+		<script>
+		
+				let img = document.querySelector('img');
+				let num = 0;
+				
+				let time = null; //节流阀
+				
+				document.addEventListener('mousemove',function(e){
+					
+					let x = e.pageX;
+					let y = e.pageY;
+					// img.style.left = img.offsetLeft + x + 'px';
+					// img.style.top = img.offsetTop+ y + 'px';
+				    if(time) {return}  //false
+					// console.log(!time)
+					time = setTimeout(function(){
+						
+						
+						img.style.left = x - (img.offsetWidth/2) + 'px';
+						img.style.top = y - (img.offsetHeight/2) + 'px';
+						
+						console.log(num)
+						
+						time = null;
+						
+					},16)
+					
+					
+					
+				})
+			
+		</script>
+	</body>
+</html>
